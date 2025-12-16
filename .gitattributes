@@ -1,0 +1,14 @@
+# Git LFS Configuration for GenRec
+# Track large data files with Git Large File Storage
+# Parquet files (raw and processed data)
+*.parquet filter=lfs diff=lfs merge=lfs -text
+# FAISS index files
+*.index filter=lfs diff=lfs merge=lfs -text
+# Large JSON files (embeddings and mappings)
+data/processed/user_embeddings.json filter=lfs diff=lfs merge=lfs -text
+data/clusters/user_cluster_map.json filter=lfs diff=lfs merge=lfs -text
+# Large CSV files (mappings)
+data/processed/asin_mapping.csv filter=lfs diff=lfs merge=lfs -text
+# Model checkpoints (if any)
+*.bin filter=lfs diff=lfs merge=lfs -text
+*.safetensors filter=lfs diff=lfs merge=lfs -text
