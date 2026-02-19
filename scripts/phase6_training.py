@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1dNYPUNjXEfMhtovNCF1VCFHZS4hhX7wb
 """
 
-# Initial setup and data loading
+# Initial setup and data loading - updated for latest dependencies
 !pip install -q datasets transformers peft accelerate bitsandbytes trl
 !pip install -q faiss-cpu sentence-transformers
 

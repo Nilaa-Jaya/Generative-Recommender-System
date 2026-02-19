@@ -1,6 +1,6 @@
 # GenRec Setup Instructions
 
-Complete setup guide for running GenRec locally or on Google Colab.
+Complete setup guide for running GenRec locally or on Google Colab. Tested on Python 3.10+.
 
 ---
 
