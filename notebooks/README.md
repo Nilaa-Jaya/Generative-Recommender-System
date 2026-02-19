@@ -1,6 +1,6 @@
 # GenRec Notebooks
 
-This directory contains the core Jupyter notebooks that implement the GenRec pipeline. The notebooks are designed to be executed **sequentially** as each phase builds on the outputs of previous phases.
+This directory contains the core Jupyter notebooks that implement the GenRec pipeline. The notebooks are designed to be executed **sequentially**, as each phase builds on the outputs of previous phases.
 
 ## Execution Order
 

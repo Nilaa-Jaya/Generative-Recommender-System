@@ -18,7 +18,7 @@ This document provides comprehensive performance metrics, evaluation methodology
 
 ## Evaluation Overview
 
-GenRec is evaluated across three dimensions:
+GenRec is evaluated across three key dimensions:
 
 1. **Retrieval Performance**: Precision, recall, diversity, and latency
 2. **Generation Quality**: Semantic alignment (BERTScore), fluency, personalization

@@ -319,7 +319,7 @@ product_info.json (metadata)
 | `clusters/` | 15MB | 3 files |
 | **Total** | **~20.5GB** | **9 files** |
 
-**Recommendation:** Ensure at least 30GB free disk space for comfortable operation.
+**Recommendation:** Ensure at least 35GB free disk space for comfortable operation.
 
 ---
 
@@ -392,5 +392,5 @@ For data-related issues:
 
 ---
 
-**Last Updated:** 2024
+**Last Updated:** 2025
 **Maintained By:** GenRec Team

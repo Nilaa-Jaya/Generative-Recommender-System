@@ -18,7 +18,7 @@ This document provides a comprehensive technical overview of the GenRec (Generat
 
 ## System Overview
 
-GenRec is a **hybrid recommender system** that combines:
+GenRec is a **hybrid recommender system** that effectively combines:
 - **Collaborative Filtering**: User-item interaction patterns
 - **Content-Based Filtering**: Semantic understanding of product descriptions
 - **Generative AI**: Natural language explanations powered by LLMs
