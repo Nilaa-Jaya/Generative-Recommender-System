@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
-![Status](https://img.shields.io/badge/status-active-success.svg)
+![Status](https://img.shields.io/badge/status-active-brightgreen.svg)
 
 A state-of-the-art **personalized recommendation system** that combines semantic retrieval, deep learning embeddings, and large language models to generate explainable, context-aware product recommendations at scale.
 
