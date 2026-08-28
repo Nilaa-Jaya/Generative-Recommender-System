@@ -1,0 +1,4 @@
+-r requirements.txt
+
+# Repository validation and test tooling
+pytest>=7.4,<9
