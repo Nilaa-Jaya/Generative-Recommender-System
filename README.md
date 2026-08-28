@@ -20,7 +20,7 @@ GenRec bridges traditional collaborative filtering with modern generative AI by 
 - **Performance Gains**:
   - Precision@10: 0.57 → 0.69 (+21%)
   - Diversity@10: 0.42 → 0.51 (+21%)
-  - Simulated CTR uplift: ~13%
+  - Simulated CTR uplift: +10 percentage points (0.31 to 0.41; +32% relative)
 
 ---
 
@@ -230,7 +230,7 @@ All large files are tracked with **Git LFS**. See [data/README.md](data/README.m
 
 ### Business Impact
 
-- **Simulated CTR Uplift**: ~13% on top-10 ranked items
+- **Simulated CTR Uplift**: +10 percentage points (0.31 to 0.41; +32% relative)
 - **User Engagement**: Improved through explainable recommendations
 - **Scalability**: Sub-50ms retrieval supports real-time serving
 

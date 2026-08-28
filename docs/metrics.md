@@ -281,7 +281,8 @@ def personalization_score(generated_text, user_persona):
 | **+ Personalization** | 0.22 | 0.51 | 0.38 |
 | **+ Personalization + RLHF** | 0.24 | 0.54 | **0.41** |
 
-**Key Finding:** Personalization + RLHF yielded **~13% CTR uplift** (0.31 → 0.41).
+**Key Finding:** Personalization + RLHF increased simulated CTR from 0.31 to
+0.41: a **10 percentage-point increase** and **32% relative uplift**.
 
 ---
 
