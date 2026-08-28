@@ -462,6 +462,16 @@ index.nprobe = 10  # Trade-off: higher = slower but more accurate
 
 ## Verification
 
+### Test 0: Validate Repository Artifacts
+
+Run the dependency-free integrity check before loading the ML stack. It verifies
+the expected JSON, JSONL, and CSV artifacts and recognizes files that have not
+yet been hydrated from Git LFS.
+
+```bash
+python scripts/validate_repository.py
+```
+
 ### Test 1: Import All Libraries
 
 ```python
