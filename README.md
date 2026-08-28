@@ -85,8 +85,9 @@ GenRec/
 │   ├── 03_phase5_personalization.ipynb
 │   └── 04_phase6_finetuning_rlhf.ipynb
 │
-├── scripts/                        # Standalone Python scripts
-│   └── phase6_training.py         # Phase 6 training script
+├── scripts/                        # Training exports and repository tools
+│   ├── phase6_training.py         # Colab-exported Phase 6 reference
+│   └── validate_repository.py     # Fast artifact integrity checks
 │
 ├── data/                           # Data files (Git LFS tracked)
 │   ├── raw/                        # Raw Amazon review data
@@ -99,6 +100,8 @@ GenRec/
 │   └── images/                    # Diagrams and visualizations
 │
 ├── requirements.txt               # Python dependencies
+├── requirements-dev.txt           # Test and validation dependencies
+├── CONTRIBUTING.md                # Contributor workflow
 ├── setup_instructions.md          # Detailed setup guide
 ├── .gitattributes                 # Git LFS configuration
 └── LICENSE                        # MIT License
@@ -165,6 +168,30 @@ jupyter notebook notebooks/01_phase3_semantic_retrieval.ipynb
 4. **Phase 6**: Fine-tuning & RLHF (trains QLoRA, runs RLHF)
 
 See [notebooks/README.md](notebooks/README.md) for detailed instructions.
+
+### Repository Validation
+
+Run the lightweight checks before starting a long notebook or training job:
+
+```bash
+python scripts/validate_repository.py
+```
+
+For contributors, install the development requirements and run the test suite:
+
+```bash
+python -m pip install -r requirements-dev.txt
+python -m pytest -q
+```
+
+These checks validate the checked-in JSON, JSONL, and CSV artifacts without
+loading the model stack or downloading Git LFS payloads. GitHub Actions runs the
+same checks for pushes and pull requests.
+
+> **Training script note:** `scripts/phase6_training.py` is retained as a
+> Colab-exported experiment reference and contains notebook magics and mounted
+> Google Drive paths. Use `notebooks/04_phase6_finetuning_rlhf.ipynb` for the
+> supported Phase 6 workflow.
 
 ---
 
