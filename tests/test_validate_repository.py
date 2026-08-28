@@ -2,7 +2,7 @@ import csv
 import json
 from pathlib import Path
 
-from scripts.validate_repository import _check_json, validate
+from scripts.validate_repository import _check_json, _check_nonempty, validate
 
 
 def _write_fixture(root: Path) -> None:
@@ -52,3 +52,18 @@ def test_json_check_reports_invalid_content(tmp_path: Path) -> None:
 
     assert not result.ok
     assert "Expecting property name" in result.detail
+
+
+def test_validator_accepts_git_lfs_pointer(tmp_path: Path) -> None:
+    path = tmp_path / "artifact.json"
+    path.write_text(
+        "version https://git-lfs.github.com/spec/v1\n"
+        "oid sha256:0123456789abcdef\n"
+        "size 1000\n",
+        encoding="utf-8",
+    )
+
+    result = _check_nonempty(path)
+
+    assert result.ok
+    assert result.detail == "valid Git LFS pointer"

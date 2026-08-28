@@ -27,12 +27,22 @@ def _name(path: Path) -> str:
         return str(path)
 
 
+def _is_lfs_pointer(path: Path) -> bool:
+    try:
+        with path.open("rb") as handle:
+            return handle.readline().strip() == b"version https://git-lfs.github.com/spec/v1"
+    except OSError:
+        return False
+
+
 def _load_json(path: Path) -> object:
     with path.open(encoding="utf-8") as handle:
         return json.load(handle)
 
 
 def _check_json(path: Path) -> CheckResult:
+    if _is_lfs_pointer(path):
+        return CheckResult(_name(path), True, "valid Git LFS pointer")
     try:
         value = _load_json(path)
     except (OSError, UnicodeError, json.JSONDecodeError) as exc:
@@ -42,6 +52,8 @@ def _check_json(path: Path) -> CheckResult:
 
 
 def _check_jsonl(path: Path) -> CheckResult:
+    if _is_lfs_pointer(path):
+        return CheckResult(_name(path), True, "valid Git LFS pointer")
     count = 0
     line_number = 0
     try:
@@ -59,6 +71,8 @@ def _check_jsonl(path: Path) -> CheckResult:
 
 
 def _check_csv(path: Path) -> CheckResult:
+    if _is_lfs_pointer(path):
+        return CheckResult(_name(path), True, "valid Git LFS pointer")
     try:
         with path.open(encoding="utf-8", newline="") as handle:
             reader = csv.reader(handle)
@@ -73,6 +87,8 @@ def _check_csv(path: Path) -> CheckResult:
 
 
 def _check_nonempty(path: Path) -> CheckResult:
+    if _is_lfs_pointer(path):
+        return CheckResult(_name(path), True, "valid Git LFS pointer")
     size = path.stat().st_size
     return CheckResult(_name(path), size > 0, f"{size:,} bytes")
 
