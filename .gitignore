@@ -83,6 +83,7 @@ mlruns/
 *.temp
 tmp/
 temp/
+tmpclaude-*-cwd
 
 # Environment variables
 .env
